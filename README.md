@@ -30,10 +30,10 @@ Le développement est découpé en plusieurs **versions** progressives :
 
 | Version | Contenu                                                                 |
 |---------|-------------------------------------------------------------------------|
-| v1      | 🔧 Mise en place du layout global : `Header`, `Footer`, `Sidebar`      |
-| v2      | 📝 Création et intégration des **formulaires** avec le composant Form |
-| v3      | 🗄️ Configuration et intégration de la **base de données** avec Doctrine |
-| v4      | 🔐 Mise en place du système d’**authentification** (security/login)    |
+| v1 - version-1      | 🔧 Mise en place du layout global : `Header`, `Footer`, `Sidebar`      |
+| v2 - version-2      | 📝 Création et intégration des **formulaires** avec le composant Form |
+| v3 - version-3      | 🗄️ Configuration et intégration de la **base de données** avec Doctrine |
+| v4 - version-4      | 🔐 Mise en place du système d’**authentification** (security/login)    |
 
 > Le projet est en cours d’évolution 🚀
 
