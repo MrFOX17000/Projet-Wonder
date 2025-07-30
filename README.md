@@ -1,6 +1,7 @@
 # 🧠 Wonder – Projet Symfony
 
-Bienvenue dans **Wonder**, un projet Symfony réalisé dans le cadre de ma formation de développeur web PHP/Symfony.  
+Bienvenue dans **Wonder**, un projet Symfony réalisé dans le cadre de ma formation de développeur web PHP/Symfony. 
+
 L'objectif ? Créer une application sociale inspirée de **Quora**, où les utilisateurs peuvent poser des questions, y répondre, et interagir entre eux.
 
 ## 🎯 Objectifs pédagogiques
