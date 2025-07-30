@@ -1,20 +1,34 @@
-
-###> symfony/framework-bundle ###
-/.env.local
-/.env.local.php
-/.env.*.local
-/config/secrets/prod/prod.decrypt.private.php
-/public/bundles/
-/var/
+# Composer
 /vendor/
-###< symfony/framework-bundle ###
+/composer.lock
 
-###> phpunit/phpunit ###
-/phpunit.xml
-/.phpunit.cache/
-###< phpunit/phpunit ###
+# Symfony
+/var/
+/.env.local
+.env.*.local
+.env.local.php
 
-###> symfony/asset-mapper ###
-/public/assets/
-/assets/vendor/
-###< symfony/asset-mapper ###
+# IDE & système
+*.swp
+*.swo
+.idea/
+/.vscode/
+/.DS_Store
+Thumbs.db
+
+# Node/Webpack
+/node_modules/
+/public/build/
+/public/bundles/
+
+# Log et cache
+*.log
+/log/
+/cache/
+
+# Tests
+/phpunit.result.cache
+
+# Autres fichiers sensibles
+/private/
+/config/secrets/prod/prod.decrypt.private.php
