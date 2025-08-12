@@ -31,10 +31,10 @@ Le développement est découpé en plusieurs **versions** progressives :
 
 | Version | Contenu                                                                 |
 |---------|-------------------------------------------------------------------------|
-| v1 - version-1      | 🔧 Mise en place du layout global : `Header`, `Footer`, `Sidebar`      |
-| v2 - version-2      | 📝 Création et intégration des **formulaires** avec le composant Form |
-| v3 - version-3      | 🗄️ Configuration et intégration de la **base de données** avec Doctrine |
-| v4 - version-4      | 🔐 Mise en place du système d’**authentification** (security/login)    |
+| V1 | [version-1](https://github.com/TonPseudo/Wonder/tree/version-1) | 🔧 Layout : header, footer, sidebar |
+| V2 | [version-2](https://github.com/TonPseudo/Wonder/tree/version-2) | 📝 Formulaires Symfony |
+| V3 | [version-3](https://github.com/TonPseudo/Wonder/tree/version-3) | 🗄️ Base de données avec Doctrine |
+| V4 | [version-4](https://github.com/TonPseudo/Wonder/tree/version-4) | 🔐 Authentification et sécurité |
 
 > Le projet est en cours d’évolution 🚀
 
