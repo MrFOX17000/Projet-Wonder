@@ -31,9 +31,9 @@ Cette version se concentre sur l’intégration des **formulaires Symfony** pour
 
 ## 📸 Aperçu
 
-<img width="1524" height="777" alt="image" src="https://github.com/user-attachments/assets/a62cd2b0-4a4f-40ff-b022-b160cc0a455b" />
+<img width="1520" height="736" alt="image" src="https://github.com/user-attachments/assets/703a8fb6-fa58-45e2-96a6-6ce5f0f00738" />
 
-<img width="1533" height="799" alt="image" src="https://github.com/user-attachments/assets/84936825-61fd-46e9-945d-4a0419636953" />
+<img width="1540" height="712" alt="image" src="https://github.com/user-attachments/assets/0ee044da-5407-457c-9a54-a0845c7a6c5a" />
 
 ---
 
