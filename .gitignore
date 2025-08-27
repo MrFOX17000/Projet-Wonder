@@ -1,0 +1,34 @@
+# Composer
+/vendor/
+/composer.lock
+
+# Symfony
+/var/
+/.env.local
+.env.*.local
+.env.local.php
+
+# IDE & système
+*.swp
+*.swo
+.idea/
+/.vscode/
+/.DS_Store
+Thumbs.db
+
+# Node/Webpack
+/node_modules/
+/public/build/
+/public/bundles/
+
+# Log et cache
+*.log
+/log/
+/cache/
+
+# Tests
+/phpunit.result.cache
+
+# Autres fichiers sensibles
+/private/
+/config/secrets/prod/prod.decrypt.private.php
