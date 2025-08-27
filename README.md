@@ -1,19 +1,21 @@
-# 🧠 Wonder – Version 1
+# 🧠 Wonder – Version 2
 
-Bienvenue dans la version 1 de **Wonder**, un projet Symfony réalisé dans le cadre de ma formation PHP/Symfony.
+Bienvenue dans la version 2 de **Wonder**, un projet Symfony réalisé en autodidacte.
 
-L’objectif de cette première version est simple : poser les bases visuelles de l’application. On parle ici de structure, de layout, de premières impressions. Bref, on prépare le terrain avant d’entrer dans le vif du sujet (les formulaires, la base de données, l’auth, tout ça viendra après 😉).
+Après avoir posé les bases visuelles en V1, place à l’interaction !  
+Cette version se concentre sur l’intégration des **formulaires Symfony** pour permettre aux utilisateurs de saisir et envoyer des données.
 
 ---
 
-## 🎯 Objectifs de la V1
+## 🎯 Objectifs de la V2
 
-- Mise en place d’un **layout général responsive** :
-  - ✅ `Header` avec navigation principale
-  - ✅ `Sidebar` pour la navigation secondaire ou les filtres
-  - ✅ `Footer` simple et propre
-- Intégration de **Twig** pour les vues
-- Préparation de la structure de templates : base + héritage
+- Mise en place de **formulaires Symfony** :
+  - ✅ Création de formulaires avec le composant **Form**
+  - ✅ Validation des données côté serveur
+  - ✅ Affichage des erreurs de validation dans Twig
+- Utilisation des **Form Types** personnalisés
+- Gestion des champs standards (text, email, textarea…)
+- Application d’un style Bootstrap 5 sur les formulaires
 
 ---
 
@@ -21,23 +23,40 @@ L’objectif de cette première version est simple : poser les bases visuelles d
 
 - Symfony 6.x
 - Twig
-- Webpack Encore (préconfiguré mais peu utilisé ici)
-- Git + GitHub (organisation en branches par version)
+- Composant **Form**
+- Composant **Validator**
+- Bootstrap 5 (via Webpack Encore)
 
 ---
 
-## 🔍 Aperçu du layout
+## 📸 Aperçu
 
-<img width="1920" height="930" alt="image" src="https://github.com/user-attachments/assets/45f69727-a696-40ab-b3a7-0cb32ab96090" />
+<img width="1524" height="777" alt="image" src="https://github.com/user-attachments/assets/a62cd2b0-4a4f-40ff-b022-b160cc0a455b" />
 
-📸 Un design minimal pour le moment, mais propre, modulable, et prêt à accueillir les fonctionnalités suivantes.
+<img width="1533" height="799" alt="image" src="https://github.com/user-attachments/assets/84936825-61fd-46e9-945d-4a0419636953" />
 
 ---
 
-## 🚀 Prochaine étape : Version 2
+## 🗂️ Structure des fichiers (simplifiée)
 
-👉 Intégration des **formulaires Symfony** : création, affichage, validation.  
-Le projet va commencer à interagir avec l'utilisateur 🧑‍💻
+src/
+
+├── Form/
+
+│ └── QuestionType.php # Exemple de formulaire
+
+templates/
+
+├── question/
+
+│ └── index.html.twig # Vue du formulaire pour poser une question
+
+---
+
+## 🚀 Prochaine étape : Version 3
+
+👉 Intégration de la **base de données** avec Doctrine ORM.  
+Les formulaires commenceront à stocker et récupérer de vraies données 🗄️
 
 ---
 
@@ -47,3 +66,8 @@ Projet réalisé par **Mathias**, développeur web en formation PHP/Symfony.
 
 > En recherche active d'un poste ou d'une alternance Symfony – [Me contacter](mailto:renardmathias2@gmail.com)
 
+---
+
+## 📝 Licence
+
+Projet open source – libre à vous de l’explorer, de vous en inspirer, ou de contribuer 🌟
