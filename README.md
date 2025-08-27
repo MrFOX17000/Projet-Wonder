@@ -1,6 +1,6 @@
-# 🧠 Wonder – Version 2
+# 🧠 Wonder – Version 2 (Fil rouge Dyma)
 
-Bienvenue dans la version 2 de **Wonder**, un projet Symfony réalisé en autodidacte.
+Bienvenue dans la version 2 de **Wonder**, un projet réalisé dans le cadre de ma formation Symfony sur [Dyma](https://dyma.fr).
 
 Après avoir posé les bases visuelles en V1, place à l’interaction !  
 Cette version se concentre sur l’intégration des **formulaires Symfony** pour permettre aux utilisateurs de saisir et envoyer des données.
@@ -62,12 +62,13 @@ Les formulaires commenceront à stocker et récupérer de vraies données 🗄�
 
 ## 👨‍💻 Auteur
 
-Projet réalisé par **Mathias**, développeur web en formation PHP/Symfony.
-
-> En recherche active d'un poste ou d'une alternance Symfony – [Me contacter](mailto:renardmathias2@gmail.com)
+Projet fil rouge développé par **Mathias**  
+📚 Formation Symfony – [Dyma](https://dyma.fr)  
+👉 En recherche active d’un poste en développement web (Symfony/PHP)  
+📫 [Me contacter](mailto:renardmathias2@gmail.com)
 
 ---
 
 ## 📝 Licence
 
-Projet open source – libre à vous de l’explorer, de vous en inspirer, ou de contribuer 🌟
+Projet sous licence MIT – à but pédagogique 😎
