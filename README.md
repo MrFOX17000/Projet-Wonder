@@ -26,6 +26,7 @@ Cette version se concentre sur l’intégration de **Doctrine ORM** pour stocker
 -   Doctrine Migrations
 -   Twig
 -   Bootstrap 5 (via Webpack Encore)
+-   Bundle KnpTime
 
 ---
 
