@@ -1,6 +1,6 @@
 # 🧠 Wonder – Version 1
 
-Bienvenue dans la version 1 de **Wonder**, un projet Symfony réalisé dans le cadre de ma formation PHP/Symfony.
+Bienvenue dans **Wonder**, le projet fil rouge que je développe dans le cadre de ma formation Symfony sur [Dyma](https://dyma.fr).  
 
 L’objectif de cette première version est simple : poser les bases visuelles de l’application. On parle ici de structure, de layout, de premières impressions. Bref, on prépare le terrain avant d’entrer dans le vif du sujet (les formulaires, la base de données, l’auth, tout ça viendra après 😉).
 
@@ -28,7 +28,7 @@ L’objectif de cette première version est simple : poser les bases visuelles d
 
 ## 🔍 Aperçu du layout
 
-<img width="1920" height="930" alt="image" src="https://github.com/user-attachments/assets/45f69727-a696-40ab-b3a7-0cb32ab96090" />
+<img width="1518" height="841" alt="image" src="https://github.com/user-attachments/assets/73355163-d25d-4a18-9b4e-a9a748e5013d" />
 
 📸 Un design minimal pour le moment, mais propre, modulable, et prêt à accueillir les fonctionnalités suivantes.
 
@@ -43,7 +43,13 @@ Le projet va commencer à interagir avec l'utilisateur 🧑‍💻
 
 ## 👨‍💻 Auteur
 
-Projet réalisé par **Mathias**, développeur web en formation PHP/Symfony.
+Projet fil rouge développé par **Mathias**  
+📚 Formation Symfony – [Dyma](https://dyma.fr)  
+👉 En recherche active d’un poste en développement web (Symfony/PHP)  
+📫 [Me contacter](mailto:renardmathias2@gmail.com)
 
-> En recherche active d'un poste ou d'une alternance Symfony – [Me contacter](mailto:renardmathias2@gmail.com)
+---
 
+## 📝 Licence
+
+Projet sous licence MIT – à but pédagogique 😎
