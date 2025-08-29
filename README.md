@@ -1,39 +1,38 @@
-# 🧠 Wonder – Version 2
+# 🧠 Wonder – Version 3
 
-Bienvenue dans la version 2 de **Wonder**, un projet Symfony réalisé en autodidacte.
+Bienvenue dans la version 3 de **Wonder**, le projet fil rouge que je développe avec Symfony dans le cadre de ma formation.
 
-Après avoir posé les bases visuelles en V1, place à l’interaction !  
-Cette version se concentre sur l’intégration des **formulaires Symfony** pour permettre aux utilisateurs de saisir et envoyer des données.
+Après avoir posé les bases visuelles (V1) puis intégré les formulaires (V2), place à la **persistance des données** !  
+Cette version se concentre sur l’intégration de **Doctrine ORM** pour stocker et manipuler les données utilisateurs.
 
 ---
 
-## 🎯 Objectifs de la V2
+## 🎯 Objectifs de la V3
 
-- Mise en place de **formulaires Symfony** :
-  - ✅ Création de formulaires avec le composant **Form**
-  - ✅ Validation des données côté serveur
-  - ✅ Affichage des erreurs de validation dans Twig
-- Utilisation des **Form Types** personnalisés
-- Gestion des champs standards (text, email, textarea…)
-- Application d’un style Bootstrap 5 sur les formulaires
+-   Mise en place de **Doctrine ORM** :
+    -   ✅ Configuration de la connexion à la base de données
+    -   ✅ Création des entités et mapping avec les tables
+    -   ✅ Utilisation des migrations pour gérer l’évolution du schéma
+-   Sauvegarde des données issues des formulaires en base
+-   Lecture et affichage des données dans les templates Twig
+-   Utilisation du **Repository Pattern** pour interagir avec les entités
 
 ---
 
 ## 🧰 Tech utilisées
 
-- Symfony 6.x
-- Twig
-- Composant **Form**
-- Composant **Validator**
-- Bootstrap 5 (via Webpack Encore)
+-   Symfony 6.x
+-   Doctrine ORM
+-   Doctrine Migrations
+-   Twig
+-   Bootstrap 5 (via Webpack Encore)
 
 ---
 
 ## 📸 Aperçu
 
-<img width="1524" height="777" alt="image" src="https://github.com/user-attachments/assets/a62cd2b0-4a4f-40ff-b022-b160cc0a455b" />
-
-<img width="1533" height="799" alt="image" src="https://github.com/user-attachments/assets/84936825-61fd-46e9-945d-4a0419636953" />
+![alt text](image.png)
+![alt text](image-1.png)
 
 ---
 
@@ -41,33 +40,35 @@ Cette version se concentre sur l’intégration des **formulaires Symfony** pour
 
 src/
 
-├── Form/
+├── Entity/  
+│ └── Question.php # Entité représentant une question
 
-│ └── QuestionType.php # Exemple de formulaire
+├── Repository/  
+│ └── QuestionRepository.php # Gestion des requêtes liées à Question
 
-templates/
-
-├── question/
-
-│ └── index.html.twig # Vue du formulaire pour poser une question
+templates/  
+├── question/  
+│ ├── index.html.twig # Liste des questions  
+│ └── show.html.twig # Détails d’une question
 
 ---
 
-## 🚀 Prochaine étape : Version 3
+## 🚀 Prochaine étape : Version 4
 
-👉 Intégration de la **base de données** avec Doctrine ORM.  
-Les formulaires commenceront à stocker et récupérer de vraies données 🗄️
+👉 Ajout de l’**authentification et sécurité** avec le Security Bundle de Symfony.  
+Les utilisateurs pourront créer un compte et se connecter 🔐
 
 ---
 
 ## 👨‍💻 Auteur
 
-Projet réalisé par **Mathias**, développeur web en formation PHP/Symfony.
-
-> En recherche active d'un poste ou d'une alternance Symfony – [Me contacter](mailto:renardmathias2@gmail.com)
+Projet fil rouge développé par **Mathias**  
+📚 Formation Symfony – [Dyma](https://dyma.fr)  
+👉 En recherche active d’un poste en développement web (Symfony/PHP)  
+📫 [Me contacter](mailto:renardmathias2@gmail.com)
 
 ---
 
 ## 📝 Licence
 
-Projet open source – libre à vous de l’explorer, de vous en inspirer, ou de contribuer 🌟
+Projet sous licence MIT – à but pédagogique 😎
