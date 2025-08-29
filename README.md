@@ -1,6 +1,6 @@
 # 🧠 Wonder – Version 3
 
-Bienvenue dans la version 3 de **Wonder**, le projet fil rouge que je développe avec Symfony dans le cadre de ma formation.
+Bienvenue dans la version 2 de **Wonder**, un projet réalisé dans le cadre de ma formation Symfony sur [Dyma](https://dyma.fr).
 
 Après avoir posé les bases visuelles (V1) puis intégré les formulaires (V2), place à la **persistance des données** !  
 Cette version se concentre sur l’intégration de **Doctrine ORM** pour stocker et manipuler les données utilisateurs.
