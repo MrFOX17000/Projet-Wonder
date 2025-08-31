@@ -4,18 +4,11 @@
 		<span>Poser une question</span>
 	</a>
 	<ul class="sidebar-nav py-20">
-		<a href="{{ path('home') }}" {% if app.request.pathinfo == path('home') %}class="active"{% endif %}
-		> {# class="{{ app.request.pathinfo == path('home') ? 'active' : '' }}" #}
+		<a
+			href="{{ path('home') }}" {% if app.request.pathinfo == path('home') %} class="active" {% endif %}>
+			{# class="{{ app.request.pathinfo == path('home') ? 'active' : '' }}" #}
 			<i class="fa-solid fa-list mr-5"></i>
 			<span>Liste des questions</span>
-		</a>
-		<a href="#">
-			<i class="fa-solid fa-pen mr-5"></i>
-			<span>Mes questions</span>
-		</a>
-		<a href="#">
-			<i class="fa-solid fa-comments mr-5"></i>
-			<span>Mes réponses</span>
 		</a>
 	</ul>
 </div>
