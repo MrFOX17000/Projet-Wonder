@@ -1,63 +1,60 @@
-# 🧠 Wonder – Version 3
+# 🧠 Wonder – Version 4
 
-Bienvenue dans la version 2 de **Wonder**, un projet réalisé dans le cadre de ma formation Symfony sur [Dyma](https://dyma.fr).
+Bienvenue dans la version 4 de **Wonder**, un projet réalisé dans le cadre de ma formation Symfony sur [Dyma](https://dyma.fr).
 
-Après avoir posé les bases visuelles (V1) puis intégré les formulaires (V2), place à la **persistance des données** !  
-Cette version se concentre sur l’intégration de **Doctrine ORM** pour stocker et manipuler les données utilisateurs.
+Après avoir posé les **bases visuelles** (V1), intégré les **formulaires** (V2) et mis en place la **persistance des données** (V3), cette version se concentre sur l’authentification et la sécurité. Les utilisateurs peuvent maintenant créer un compte et se connecter de manière sécurisée 🔐.
 
 ---
 
-## 🎯 Objectifs de la V3
+## 🎯 Objectifs de la V4
 
--   Mise en place de **Doctrine ORM** :
-    -   ✅ Configuration de la connexion à la base de données
-    -   ✅ Création des entités et mapping avec les tables
-    -   ✅ Utilisation des migrations pour gérer l’évolution du schéma
--   Sauvegarde des données issues des formulaires en base
--   Lecture et affichage des données dans les templates Twig
--   Utilisation du **Repository Pattern** pour interagir avec les entités
+-   Mise en place de **l’authentification Symfony** :
+    -   ✅ Création de la gestion des utilisateurs (inscription / login / logout)
+    -   ✅ Hashage sécurisé des mots de passe avec bcrypt / sodium
+    -   ✅ Protection des routes et contrôle des accès avec le Security Bundle
+-   Gestion des rôles utilisateurs (ROLE_USER, ROLE_ADMIN) pour sécuriser certaines pages
+-   Intégration de formulaires sécurisés pour l’inscription et la connexion
+-   Validation côté serveur et affichage des erreurs dans Twig
+-   Mise en place d’une navigation adaptée selon l’état de connexion de l’utilisateur
 
 ---
 
 ## 🧰 Tech utilisées
 
 -   Symfony 6.x
--   Doctrine ORM
--   Doctrine Migrations
 -   Twig
+-   Security Bundle
+-   Doctrine ORM (pour stocker les utilisateurs)
 -   Bootstrap 5 (via Webpack Encore)
--   Bundle KnpTime
 
 ---
 
 ## 📸 Aperçu
 
-![alt text](image.png)
-![alt text](image-1.png)
+A venir !
 
 ---
 
 ## 🗂️ Structure des fichiers (simplifiée)
 
 src/
-
-├── Entity/  
-│ └── Question.php # Entité représentant une question
-
-├── Repository/  
-│ └── QuestionRepository.php # Gestion des requêtes liées à Question
-
-templates/  
-├── question/  
-│ ├── index.html.twig # Liste des questions  
-│ └── show.html.twig # Détails d’une question
+├── Entity/
+│ └── User.php # Entité représentant un utilisateur
+├── Repository/
+│ └── UserRepository.php # Gestion des requêtes liées aux utilisateurs
+├── Security/
+│ └── LoginFormAuthenticator.php # Authentificateur pour le formulaire de login
+templates/
+├── security/
+│ ├── login.html.twig # Formulaire de connexion
+│ └── register.html.twig # Formulaire d’inscription
 
 ---
 
-## 🚀 Prochaine étape : Version 4
+## 🚀 Prochaine étape : Version 5
 
-👉 Ajout de l’**authentification et sécurité** avec le Security Bundle de Symfony.  
-Les utilisateurs pourront créer un compte et se connecter 🔐
+👉 Ajout de la **réinitialisation de mot de passe** avec **envoi d’email** via le composant **Mailer** de Symfony 📧.
+Les utilisateurs pourront récupérer leur mot de passe en toute sécurité.
 
 ---
 
