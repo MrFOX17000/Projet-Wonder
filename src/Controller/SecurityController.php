@@ -10,12 +10,14 @@ use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use App\Form\UserType;
+use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+
 
 final class SecurityController extends AbstractController
 {
     #[Route('/signup', name: 'signup')]
-    public function signup(Request $request, EntityManagerInterface $em, UserPasswordHasherInterface $userPasswordHasher): Response
+    public function signup(Security $security, Request $request, EntityManagerInterface $em, UserPasswordHasherInterface $userPasswordHasher): Response
     {
         $user = new User();
         $userForm = $this->createForm(UserType::class, $user);
@@ -25,9 +27,9 @@ final class SecurityController extends AbstractController
             $user->setPassword($userPasswordHasher->hashPassword($user, $user->getPassword()));
             $em->persist($user);
             $em->flush();
-            $this->addFlash('success', 'Votre compte a bien été créé. Vous pouvez maintenant vous connecter !');
+            $this->addFlash('success', 'Votre compte a bien été créé. Bienvenue sur Wonder !');
 
-            return $this->redirectToRoute('login');
+            return $security->login($user);
         }
 
         return $this->render('security/signup.html.twig', [

@@ -277,7 +277,7 @@ small {
 .form-row {
     display: flex;
     flex-flow: column;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form-row label {
@@ -300,9 +300,16 @@ small {
 }
 
 .form-errors {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 10px;
     color: var(--warning);
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-semi-bold);
+}
+
+.form-errors li {
+    margin-left: 10px;
 }
 
 .avatar {
@@ -362,6 +369,10 @@ small {
 
 .flash-success {
     background-color: var(--success);
+}
+
+.flash-warning {
+    background-color: var(--warning);
 }
 
 /* header */

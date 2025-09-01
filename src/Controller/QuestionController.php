@@ -11,12 +11,15 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Form\CommentType;
 use App\Entity\Comment;
+use App\Repository\VoteRepository;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
+use App\Entity\Vote;
+use App\Repository\QuestionRepository;
 
 class QuestionController extends AbstractController
 {
   #[Route('/question/ask', name: 'question_form')]
-  #[IsGranted('IS_AUTHENTICATED_FULLY')]
+  #[IsGranted('IS_AUTHENTICATED_REMEMBERED')]
   public function index(Request $request, EntityManagerInterface $em): Response
   {
     $user = $this->getUser();
@@ -42,8 +45,9 @@ class QuestionController extends AbstractController
   }
 
   #[Route('/question/{id}', name: 'question_show')]
-  public function show(Request $request, Question $question, EntityManagerInterface $em): Response
+  public function show(Request $request, QuestionRepository $questionRepo, int $id, EntityManagerInterface $em): Response
   {
+    $question = $questionRepo->getQuestionWithCommentsAndAuthors($id);
     $options = ['question' => $question];
     $user = $this->getUser();
 
@@ -69,21 +73,63 @@ class QuestionController extends AbstractController
   }
 
   #[Route('/question/rating/{id}/{score}', name: 'question_rating')]
-  #[IsGranted('IS_AUTHENTICATED_FULLY')]
-  public function ratingQuestion(Request $request, Question $question, int $score, EntityManagerInterface $em): Response
+  #[IsGranted('IS_AUTHENTICATED_REMEMBERED')]
+  public function ratingQuestion(Request $request,VoteRepository $voteRepo, Question $question, int $score, EntityManagerInterface $em): Response
   {
-    $question->setRating($question->getRating() + $score);
-    $em->flush();
+    $user = $this->getUser();
+    if ($question->getAuthor() !== $user) {
+      $vote = $voteRepo->findOneBy(['author' => $user, 'question' => $question]);
+      if($vote){
+        if(($vote->IsLiked() && $score > 0) || (!$vote->IsLiked() && $score < 0)) {
+          $em->remove($vote);
+          $question->setRating($score > 0 ? $question->getRating() - 1 : $question->getRating() + 1);
+        } else {
+          $vote->setIsLiked(!$vote->IsLiked());
+          $question->setRating($score > 0 ? $question->getRating() + 2 : $question->getRating() - 2);
+        } 
+      } else {
+        $vote = new Vote();
+        $vote->setAuthor($user);
+        $vote->setQuestion($question);
+        $vote->setIsLiked($score > 0 ? true : false);
+        $question->setRating($question->getRating() + $score);
+        $em->persist($vote);
+      }
+      $em->flush();
+    }else {
+      $this->addFlash('warning', 'Vous ne pouvez pas voter pour votre propre question');
+    }
     $referer = $request->server->get('HTTP_REFERER');
     return $referer ? $this->redirect($referer) : $this->redirectToRoute('home');
-  }
+}
 
   #[Route('comment/rating/{id}/{score}', name: 'comment_rating')]
-  #[IsGranted('IS_AUTHENTICATED_FULLY')]
-  public function ratingComment(Request $request, Comment $comment, int $score, EntityManagerInterface $em): Response
+  #[IsGranted('IS_AUTHENTICATED_REMEMBERED')]
+  public function ratingComment(Request $request, Comment $comment, VoteRepository $voteRepo, int $score, EntityManagerInterface $em): Response
   {
-    $comment->setRating($comment->getRating() + $score);
-    $em->flush();
+    $user = $this->getUser();
+    if ($comment->getAuthor() !== $user) {
+      $vote = $voteRepo->findOneBy(['author' => $user, 'comment' => $comment]);
+      if($vote){
+        if(($vote->IsLiked() && $score > 0) || (!$vote->IsLiked() && $score < 0)) {
+          $em->remove($vote);
+          $comment->setRating($score > 0 ? $comment->getRating() - 1 : $comment->getRating() + 1);
+        } else {
+          $vote->setIsLiked(!$vote->IsLiked());
+          $comment->setRating($score > 0 ? $comment->getRating() + 2 : $comment->getRating() - 2);
+        } 
+      } else {
+        $vote = new Vote();
+        $vote->setAuthor($user);
+        $vote->setComment($comment);
+        $vote->setIsLiked($score > 0 ? true : false);
+        $comment->setRating($comment->getRating() + $score);
+        $em->persist($vote);
+      }
+      $em->flush();
+    }else {
+      $this->addFlash('warning', 'Vous ne pouvez pas voter pour votre propre commentaire');
+    }
     $referer = $request->server->get('HTTP_REFERER');
     return $referer ? $this->redirect($referer) : $this->redirectToRoute('home');
   }
