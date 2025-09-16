@@ -1,21 +1,20 @@
-# 🧠 Wonder – Version 4
+# 🧠 Wonder – Version 5
 
-Bienvenue dans la version 4 de **Wonder**, un projet réalisé dans le cadre de ma formation Symfony sur [Dyma](https://dyma.fr).
+Bienvenue dans la version 5 de **Wonder**, un projet réalisé dans le cadre de ma formation Symfony sur [Dyma](https://dyma.fr).
 
-Après avoir posé les **bases visuelles** (V1), intégré les **formulaires** (V2) et mis en place la **persistance des données** (V3), cette version se concentre sur l’authentification et la sécurité. Les utilisateurs peuvent maintenant créer un compte et se connecter de manière sécurisée 🔐.
+Après avoir posé les **bases visuelles** (V1), intégré les **formulaires** (V2), mis en place la **persistance des données** (V3) et ajouté l’**authentification** (V4), cette version se concentre sur une fonctionnalité incontournable : la **réinitialisation de mot de passe** 📧🔑.
 
 ---
 
-## 🎯 Objectifs de la V4
+## 🎯 Objectifs de la V5
 
--   Mise en place de **l’authentification Symfony** :
-    -   ✅ Création de la gestion des utilisateurs (inscription / login / logout)
-    -   ✅ Hashage sécurisé des mots de passe avec bcrypt / sodium
-    -   ✅ Protection des routes et contrôle des accès avec le Security Bundle
--   Gestion des rôles utilisateurs (ROLE_USER, ROLE_ADMIN) pour sécuriser certaines pages
--   Intégration de formulaires sécurisés pour l’inscription et la connexion
--   Validation côté serveur et affichage des erreurs dans Twig
--   Mise en place d’une navigation adaptée selon l’état de connexion de l’utilisateur
+-   Mise en place du **composant Mailer** pour l’envoi d’emails
+-   Création d’un flux complet de **réinitialisation de mot de passe** :
+    -   ✅ Formulaire de demande de réinitialisation (saisie de l’email)
+    -   ✅ Envoi d’un **email** avec un **lien unique et temporaire**
+    -   ✅ Formulaire sécurisé pour **définir un nouveau mot de passe**
+-   Protection contre les abus (tokens uniques, **expiration**)
+-   UX améliorée via des **messages flash** adaptés
 
 ---
 
@@ -24,41 +23,44 @@ Après avoir posé les **bases visuelles** (V1), intégré les **formulaires** (
 -   Symfony 6.x
 -   Twig
 -   Security Bundle
--   Doctrine ORM (pour stocker les utilisateurs)
+-   Doctrine ORM
+-   Symfony Mailer
 -   Bootstrap 5 (via Webpack Encore)
 
 ---
 
 ## 📸 Aperçu
 
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
-![alt text](image-5.png)
-![alt text](image-6.png)
+A venir !!!
 
 ---
 
 ## 🗂️ Structure des fichiers (simplifiée)
 
 src/
+├── Controller/
+│ └── ResetPasswordController.php # Gère la réinitialisation de mot de passe
 ├── Entity/
-│ └── User.php # Entité représentant un utilisateur
-├── Repository/
-│ └── UserRepository.php # Gestion des requêtes liées aux utilisateurs
+│ └── User.php # Entité utilisateur
 ├── Security/
-│ └── LoginFormAuthenticator.php # Authentificateur pour le formulaire de login
+│ └── LoginFormAuthenticator.php # Authentification
 templates/
-├── security/
-│ ├── login.html.twig # Formulaire de connexion
-│ └── register.html.twig # Formulaire d’inscription
+├── reset_password/
+│ ├── request.html.twig # Formulaire de demande de reset
+│ ├── check_email.html.twig # Confirmation d’envoi
+│ └── reset.html.twig # Nouveau mot de passe
+email/
+├── css/
+│ └── welcome.css # Styles pour l'email de bienvenue
+└── templates/
+└── welcome.html.twig # Template Twig pour l'email de bienvenue
 
 ---
 
-## 🚀 Prochaine étape : Version 5
+## 🚀 Prochaine étape : Version 6
 
-👉 Ajout de la **réinitialisation de mot de passe** avec **envoi d’email** via le composant **Mailer** de Symfony 📧.
-Les utilisateurs pourront récupérer leur mot de passe en toute sécurité.
+👉 Mise en place de l’upload de fichiers (ex. upload d’images ou documents) et intégration avancée avec Webpack Encore pour gérer les assets (JS/CSS).
+L’application commencera à manipuler des fichiers côté utilisateur 📂.
 
 ---
 
