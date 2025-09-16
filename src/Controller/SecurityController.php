@@ -10,25 +10,34 @@ use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use App\Form\UserType;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\SecurityBundle\Security;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 
 final class SecurityController extends AbstractController
 {
     #[Route('/signup', name: 'signup')]
-    public function signup(Security $security, Request $request, EntityManagerInterface $em, UserPasswordHasherInterface $userPasswordHasher): Response
+    public function signup(Security $security, Request $request, EntityManagerInterface $em, UserPasswordHasherInterface $userPasswordHasher, MailerInterface $mailer): Response
     {
         $user = new User();
         $userForm = $this->createForm(UserType::class, $user);
         $userForm->handleRequest($request);
         if ($userForm->isSubmitted() && $userForm->isValid()) {
-
             $user->setPassword($userPasswordHasher->hashPassword($user, $user->getPassword()));
             $em->persist($user);
             $em->flush();
             $this->addFlash('success', 'Votre compte a bien été créé. Bienvenue sur Wonder !');
-
+            $email = new TemplatedEmail();
+            $email->to($user->getEmail())
+                ->subject('Bienvenue sur Wonder')
+                ->htmlTemplate('@email_templates/welcome.html.twig')
+                ->context([
+                    'username' => $user->getFirstname()
+                ]);
+            $mailer->send($email);
+            
             return $security->login($user);
         }
 
