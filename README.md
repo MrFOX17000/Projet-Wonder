@@ -39,21 +39,19 @@ A venir !!!
 
 src/
 ├── Controller/
-│ └── ResetPasswordController.php # Gère la réinitialisation de mot de passe
+│ └── SecurityController.php # Ajout des routes qui gèrent la réinitialisation de mot de passe
 ├── Entity/
 │ └── User.php # Entité utilisateur
-├── Security/
-│ └── LoginFormAuthenticator.php # Authentification
 templates/
-├── reset_password/
-│ ├── request.html.twig # Formulaire de demande de reset
-│ ├── check_email.html.twig # Confirmation d’envoi
-│ └── reset.html.twig # Nouveau mot de passe
+├── security/
+│ ├── reset_password_request.html.twig # Formulaire pour reçevoir un e-mail de réinitialisation
+│ └── reset_password_form.html.twig # Formulaire pour nouveau mot de passe
 email/
 ├── css/
-│ └── welcome.css # Styles pour l'email de bienvenue
+│ └── email.css # Styles pour l'email de bienvenue et de réinitialisation
 └── templates/
-└── welcome.html.twig # Template Twig pour l'email de bienvenue
+│ ├── welcome.html.twig # Template Twig pour l'email de bienvenue
+│ └── reset_password_request.html.twig # Template Twig pour l'e-mail de réinitialisation
 
 ---
 

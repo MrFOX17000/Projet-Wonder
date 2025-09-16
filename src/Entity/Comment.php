@@ -40,7 +40,7 @@ class Comment
     /**
      * @var Collection<int, Vote>
      */
-    #[ORM\OneToMany(targetEntity: Vote::class, mappedBy: 'comment')]
+    #[ORM\OneToMany(targetEntity: Vote::class, mappedBy: 'comment', cascade: ['remove'], orphanRemoval: true)]
     private Collection $votes;
 
     public function __construct()

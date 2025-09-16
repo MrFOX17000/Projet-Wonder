@@ -39,7 +39,7 @@ class Question
     /**
      * @var Collection<int, Comment>
      */
-    #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'question', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'question', cascade: ['persist'], orphanRemoval: true)]
     private Collection $comments;
 
     #[ORM\ManyToOne(inversedBy: 'questions')]
@@ -49,7 +49,7 @@ class Question
     /**
      * @var Collection<int, Vote>
      */
-    #[ORM\OneToMany(targetEntity: Vote::class, mappedBy: 'question')]
+    #[ORM\OneToMany(targetEntity: Vote::class, mappedBy: 'question', cascade: ['remove'], orphanRemoval: true)]
     private Collection $votes;
 
     public function __construct()

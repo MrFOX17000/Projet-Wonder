@@ -60,13 +60,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var Collection<int, Question>
      */
-    #[ORM\OneToMany(targetEntity: Question::class, mappedBy: 'author', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Question::class, mappedBy: 'author', cascade: ['persist'], orphanRemoval: true)]
     private Collection $questions;
 
     /**
      * @var Collection<int, Comment>
      */
-    #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'author', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'author', cascade: ['persist'], orphanRemoval: true)]
     private Collection $comments;
 
     #[ORM\Column(length: 255)]

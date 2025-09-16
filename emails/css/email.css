@@ -8,5 +8,6 @@ a {
     padding: 10px 15px;
     margin-top: 20px;
     background-color: #3498db;
+    display: inline-block;
     border-radius: 3px;
 }
